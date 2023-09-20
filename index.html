@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25:00 - Time to Focus</title>
+    <link href="https://www.dafontfree.net/embed/YXJpYWwtcm91bmRlZC1yZWd1bGFyJmRhdGEvMS9hLzIwL3VuaWNvZGUuYXJpYWxyLnR0Zg"
+        rel="stylesheet" type="text/css" />
+    <script src="./script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            font-family: 'Arial Rounded', Arial, Helvetica, sans-serif;
+        }
+        .active {
+            background: rgba(0, 0, 0, .2);
+        }
+    </style>
+</head>
+
+<body class="bg-[#ba4949] text-white">
+    <div class="container max-w-[500px] mx-auto rounded-xl mx-2">
+        <nav class="nav flex items-center justify-between mt-8">
+            <p>PomoFocus</p>
+            <button class="setting p-2 bg-[rgba(255,255,255,.1)] rounded  hover:bg-[rgba(255,255,255,.2)] transition-colors duration-75">Setting</button>
+        </nav>
+        <div class="pomo bg-[rgba(255,255,255,.2)] mt-12 p-4">
+            <div class="btns flex items-center justify-between w-[50%] mx-auto font-bold text-md">
+                <button class="active py-1 px-2 rounded-lg">Pomodoro</button>
+                <button class=" py-1 px-2 rounded-lg">Short Break</button>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-4 mt-4 py-2">
+                <p class="timer text-8xl text-center">25:00</p>
+                <button class="start text-xl bg-white text-black py-2 px-4 rounded-xl hover:bg-gray-300">Start</button>
+                <button class="pause text-xl bg-white text-black py-2 px-4 rounded-xl hover:bg-gray-300">Pause</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
