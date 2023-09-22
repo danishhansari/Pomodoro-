@@ -88,7 +88,7 @@ function startCountdown(
       }
       updateTime();
     }
-  }, 1);
+  }, 1000);
 }
 
 settingOpenBtn.addEventListener("click", () => {
