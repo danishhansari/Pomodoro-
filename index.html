@@ -13,10 +13,12 @@
         * {
             font-family: 'Arial Rounded', Arial, Helvetica, sans-serif;
         }
+
         .active {
             background: #00000033;
         }
-        input:focus{
+
+        input:focus {
             border: 1px solid rgb(203, 203, 203);
             outline: none;
         }
@@ -27,7 +29,8 @@
     <div class="container max-w-[500px] mx-auto rounded-xl mx-2">
         <nav class="nav flex items-center justify-between mt-8">
             <p>PomoFocus</p>
-            <button class="setting-btn p-2 bg-[rgba(255,255,255,.1)] rounded  hover:bg-[rgba(255,255,255,.2)] transition-colors duration-75">Setting</button>
+            <button
+                class="setting-btn p-2 bg-[rgba(255,255,255,.1)] rounded  hover:bg-[rgba(255,255,255,.2)] transition-colors duration-75">Setting</button>
         </nav>
         <div class="pomo bg-[rgba(255,255,255,.2)] mt-12 p-4">
             <div class="btns flex items-center justify-between w-[70%] mx-auto font-bold text-md">
@@ -44,35 +47,38 @@
     </div>
 
 
-    <section class="setting bg-white max-w-[400px] mx-auto text-black p-3 rounded drop-shadow-xl absolute left-[50%] top-[10%] translate-x-[-50%] h-auto hidden">
+    <section
+        class="setting bg-white max-w-[400px] mx-auto text-black p-3 rounded drop-shadow-xl absolute left-[50%] top-[10%] translate-x-[-50%] h-auto hidden">
         <div class="flex items-center justify-between text-lg border-b mb-1 pb-4">
             <p>Setting</p>
-            <button class="text-2xl hover:bg-gray-200 px-2 rounded-3xl transition-colors duration-75 setting-close">&times;</button>
+            <button
+                class="text-2xl hover:bg-gray-200 px-2 rounded-3xl transition-colors duration-75 setting-close">&times;</button>
         </div>
-            <h2 class="text-lg">Time(minute)</h2>
-            <div class="flex w-full gap-6 items-center justify-center my-4">
+        <h2 class="text-lg">Time(minute)</h2>
+        <div class="flex w-full gap-6 items-center justify-center my-4">
 
-                <div class="pomo w-full">
-                    <label id="pomo">Pomodoro</label>
-                    <input type="number" class="inline w-full rounded border p-1" name="pomo" value="1">
-                </div>
-                
-                <div class="short w-full">
-                    <label id="short">Short Break</label>
-                    <input type="number" class="inline w-full rounded border p-1" name="short" value="1">
-                </div>
-
-                <div class="long w-full">
-                    <label id="long">Long Break</label>
-                    <input type="number" class="inline w-full rounded border p-1" name="long" value="15">
-                </div>
-
+            <div class="pomo w-full">
+                <label id="pomo">WorkTime</label>
+                <input type="number" class="inline w-full rounded border p-1" name="pomo" value="25">
             </div>
-            <div class="flex items-center justify-between my-2">
-                <p class="w-full">Long Break Interval</p>
-                <input type="number" value="4" class="w-1/5">
+
+            <div class="short w-full">
+                <label id="short">Short Break</label>
+                <input type="number" class="inline w-full rounded border p-1" name="short" value="1">
             </div>
-        <button class="bg-black text-white w-full py-2 rounded font-bold my-4 hover:bg-[#333] transition-colors duration-75">OK</button>
+
+            <div class="long w-full">
+                <label id="long">Long Break</label>
+                <input type="number" class="inline w-full rounded border p-1" name="long" value="15">
+            </div>
+
+        </div>
+        <div class="flex items-center justify-between my-2">
+            <p class="w-full">Long Break Interval</p>
+            <input type="number" value="4" class="w-1/5 longBreakInterval">
+        </div>
+        <button
+            class="bg-black text-white w-full py-2 rounded font-bold my-4 hover:bg-[#333] transition-colors duration-75 submit">OK</button>
     </section>
 
 </body>

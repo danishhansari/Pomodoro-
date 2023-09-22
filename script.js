@@ -3,18 +3,31 @@ const timer = document.querySelector(".timer");
 const pause = document.querySelector(".pause");
 const settingOpenBtn = document.querySelector(".setting-btn");
 const settingPanel = document.querySelector(".setting");
-const settingCloseBtn = document.querySelector('.setting-close')
-const breakBtns = document.querySelectorAll('.break');
-const WORK_TIME = 25 * 60;
-const SHORT_BREAK_TIME = 5 * 60;
-const LONG_BREAK_TIME = 15 * 60;
-let LONG_BREAK_COUNT = 0;
+const settingCloseBtn = document.querySelector(".setting-close");
+const breakBtns = document.querySelectorAll(".break");
+const submitForm = document.querySelector(".submit");
+const workTimeInput = Number(document.querySelector(".pomo input").value);
+const shortBreakInput = Number(document.querySelector(".short input").value);
+const longBreakInput = Number(document.querySelector(".long input").value);
+let LONG_BREAK_COUNT = Number(
+  document.querySelector(".longBreakInterval").value
+);
+let WORK_TIME = workTimeInput * 60;
+let SHORT_BREAK_TIME = shortBreakInput * 60;
+let LONG_BREAK_TIME = longBreakInput * 60;
 let remainingTime = WORK_TIME;
 let cycle = 0;
+let intervalId;
+let interval = 0;
 
 startBtn.addEventListener("click", () => {
   startBtn.setAttribute("disabled", true);
-  startCountdown();
+  startCountdown(
+    WORK_TIME,
+    SHORT_BREAK_TIME,
+    LONG_BREAK_TIME,
+    LONG_BREAK_COUNT
+  );
 });
 
 function stopCountdown() {
@@ -34,38 +47,43 @@ function updateTime() {
   document.title = `${minute}: ${seconds} - Time to Work`;
 }
 
-function startCountdown() {
+function startCountdown(
+  workTime,
+  shortBreakTime,
+  longBreakTime,
+  longBreakCount
+) {
   intervalId = setInterval(() => {
     if (remainingTime > 0) {
       remainingTime--;
       updateTime();
     } else {
       startBtn.removeAttribute("disabled");
-      if (LONG_BREAK_COUNT < 3) {
+      if (interval < longBreakCount) {
         if (cycle === 0) {
           cycle = 1;
-          remainingTime = SHORT_BREAK_TIME;
-          addClass(1)
+          remainingTime = shortBreakTime;
+          addClass(1);
           clearInterval(intervalId);
-          LONG_BREAK_COUNT++;
+          interval++;
         } else {
-          remainingTime = WORK_TIME;
+          remainingTime = workTime;
           cycle = 0;
           clearInterval(intervalId);
-          addClass(0)
+          addClass(0);
         }
       } else {
         if (cycle === 0) {
           cycle = 1;
-          addClass(2)
-          remainingTime = LONG_BREAK_TIME;
+          addClass(2);
+          remainingTime = longBreakTime;
           clearInterval(intervalId);
-          LONG_BREAK_COUNT = 0;
+          interval = 0;
         } else {
-          remainingTime = WORK_TIME;
+          remainingTime = workTime;
           cycle = 0;
           clearInterval(intervalId);
-          addClass(0)
+          addClass(0);
         }
       }
       updateTime();
@@ -80,10 +98,19 @@ settingCloseBtn.addEventListener("click", () => {
   settingPanel.classList.add("hidden");
 });
 
-
 function addClass(element) {
-  breakBtns.forEach((elem, index) => {
-    elem.classList.remove('active');  
+  breakBtns.forEach((elem) => {
+    elem.classList.remove("active");
   });
-  breakBtns[element].classList.add('active')
+  breakBtns[element].classList.add("active");
 }
+
+submitForm.addEventListener("click", () => {
+  WORK_TIME = workTimeInput * 60;
+  SHORT_BREAK_TIME = shortBreakInput * 60;
+  LONG_BREAK_TIME = longBreakInput * 60;
+  remainingTime = WORK_TIME;
+  settingPanel.classList.add("hidden");
+  updateTime();
+  timer.textContent = `${WORK_TIME / 60}: 00`;
+});
