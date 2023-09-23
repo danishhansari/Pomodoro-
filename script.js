@@ -32,6 +32,7 @@ function stopCountdown() {
   startBtn.removeAttribute("disabled");
   clearInterval(intervalId);
   updateTime();
+  new Audio('./start.mp3').play()
 }
 
 pause.addEventListener("click", stopCountdown);
@@ -90,7 +91,8 @@ function startCountdown(
       }
       updateTime();
     }
-  }, 1);
+  }, 1000);
+  new Audio('./start.mp3').play()
 }
 
 settingOpenBtn.addEventListener("click", () => {
