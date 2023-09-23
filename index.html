@@ -26,29 +26,28 @@
 </head>
 
 <body class="bg-[#ba4949] text-white">
-    <div class="container max-w-[500px] mx-auto rounded-xl mx-2">
+    <div class="container max-w-[600px] mx-auto rounded-xl mx-2 px-6 rounded">
         <nav class="nav flex items-center justify-between mt-8">
-            <p>PomoFocus</p>
+            <p class="font-bold text-xl tracking-wide">PomoFocus</p>
             <button
-                class="setting-btn p-2 bg-[rgba(255,255,255,.1)] rounded  hover:bg-[rgba(255,255,255,.2)] transition-colors duration-75">Setting</button>
+                class="setting-btn p-2 bg-[rgba(255,255,255,.2)] rounded  hover:bg-[rgba(255,255,255,.3)] transition-colors duration-75 font-medium text-xl">Setting</button>
         </nav>
         <div class="pomo bg-[rgba(255,255,255,.2)] mt-12 p-4">
-            <div class="btns flex items-center justify-between w-[70%] mx-auto font-bold text-md">
+            <div class="btns flex items-center justify-between md:w-[70%] mx-auto font-bold text-sm md:text-md">
                 <button class="break active py-1 px-2 rounded-lg">Pomodoro</button>
                 <button class="break py-1 px-2 rounded-lg">Short Break</button>
                 <button class="break py-1 px-2 rounded-lg">Long Break</button>
             </div>
             <div class="flex flex-col items-center justify-center gap-4 mt-4 py-2">
-                <p class="timer text-8xl text-center">25:00</p>
-                <button class="start text-xl bg-white text-black py-2 px-4 rounded-xl hover:bg-gray-300">Start</button>
+                <p class="timer text-8xl text-center font-semibold">25:00</p>
+                <button class="start text-xl bg-white text-black py-2 px-4 rounded-xl hover:bg-zinc-300">Start</button>
                 <button class="pause text-xl bg-white text-black py-2 px-4 rounded-xl hover:bg-gray-300">Pause</button>
             </div>
         </div>
     </div>
 
-
-    <section
-        class="setting bg-white max-w-[400px] mx-auto text-black p-3 rounded drop-shadow-xl absolute left-[50%] top-[10%] translate-x-[-50%] h-auto hidden">
+        <section
+        class="setting bg-white w-full md:max-w-[400px] px-4 md:mx-auto text-black p-3 rounded drop-shadow-xl absolute left-[50%] top-[10%] translate-x-[-50%] h-auto hidden">
         <div class="flex items-center justify-between text-lg border-b mb-1 pb-4">
             <p>Setting</p>
             <button
@@ -80,7 +79,6 @@
         <button
             class="bg-black text-white w-full py-2 rounded font-bold my-4 hover:bg-[#333] transition-colors duration-75 submit">OK</button>
     </section>
-
 </body>
 
 </html>
